@@ -50,4 +50,5 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./reports/clover.xml
+          flags: "PHP-${{ matrix.php-version }}_Symfony-${{ matrix.symfony-version }}"
           verbose: true

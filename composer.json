@@ -1,6 +1,6 @@
 {
     "name": "nicolasguilloux/wiremock-bundle",
-    "description": "A Symfony bundle to facilitate hexagonal architecture integration without sacrificing isolation",
+    "description": "A Symfony bundle to quickly mock Http Clients using Wiremock.",
     "type": "symfony-bundle",
     "license": "MIT",
     "authors": [

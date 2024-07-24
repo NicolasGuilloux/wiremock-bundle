@@ -102,6 +102,7 @@ See link:./LICENSE[LICENSE] for details.
 
 == Hacking
 
-link:https://nixos.org/manual/nix/stable/introduction[Nix^] is here to help you install the software dependencies.
+link:https://nixos.org/manual/nix/stable/introduction[Nix^] and link:https://devenv.sh/[devenv] are here to help you
+install the software dependencies.
 
-With a working Nix setup, enter a shell with the required dependencies by running: `nix-shell`
+With the two tools installed, you can simply enter a working shell: `devenv shell`.
