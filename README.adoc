@@ -5,8 +5,8 @@
 :sectnumlevels: 2
 
 image:https://img.shields.io/packagist/v/NicolasGuilloux/wiremock-bundle[link="https://packagist.org/packages/NicolasGuilloux/wiremock-bundle",window="_blank"]
-image:https://github.com/NicolasGuilloux/wiremock-bundle/workflows/Tests/badge.svg[link="https://github.com/NicolasGuilloux/wiremock-bundle/actions",window="_blank"]
-image:https://coveralls.io/repos/github/NicolasGuilloux/wiremock-bundle/badge.svg?branch=master[link="https://coveralls.io/github/NicolasGuilloux/wiremock-bundle?branch=master",window="_blank"]
+image:https://github.com/NicolasGuilloux/wiremock-bundle/actions/workflows/tests.yml/badge.svg[link="https://github.com/NicolasGuilloux/wiremock-bundle/actions",window="_blank"]
+image:https://codecov.io/gh/NicolasGuilloux/wiremock-bundle/graph/badge.svg?token=K5MF64E9QR[link="https://codecov.io/gh/NicolasGuilloux/wiremock-bundle",window="_blank"]
 image:https://api.codeclimate.com/v1/badges/01093fd38d1ae0c5aba6/maintainability[link="https://codeclimate.com/github/NicolasGuilloux/wiremock-bundle/maintainability",window="_blank"]
 image:https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat[link="https://github.com/NicolasGuilloux/wiremock-bundle/issues",window="_blank"]
 image:https://img.shields.io/badge/license-MIT-blue.svg[link="LICENSE",window="_blank"] +
