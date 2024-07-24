@@ -1,0 +1,10 @@
+services:
+    _defaults:
+        autoconfigure: true
+        autowire: true
+        public: true
+
+    mock_http_client:
+        decorates: 'test.http_client'
+        decoration_priority: 100
+        class: Symfony\Component\HttpClient\MockHttpClient

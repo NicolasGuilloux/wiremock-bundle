@@ -1,0 +1,107 @@
+:toc: macro
+:toc-title:
+:toclevels: 2
+:sectnums:
+:sectnumlevels: 2
+
+image:https://img.shields.io/packagist/v/NicolasGuilloux/wiremock-bundle[link="https://packagist.org/packages/NicolasGuilloux/wiremock-bundle",window="_blank"]
+image:https://github.com/NicolasGuilloux/wiremock-bundle/workflows/Tests/badge.svg[link="https://github.com/NicolasGuilloux/wiremock-bundle/actions",window="_blank"]
+image:https://coveralls.io/repos/github/NicolasGuilloux/wiremock-bundle/badge.svg?branch=master[link="https://coveralls.io/github/NicolasGuilloux/wiremock-bundle?branch=master",window="_blank"]
+image:https://api.codeclimate.com/v1/badges/01093fd38d1ae0c5aba6/maintainability[link="https://codeclimate.com/github/NicolasGuilloux/wiremock-bundle/maintainability",window="_blank"]
+image:https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat[link="https://github.com/NicolasGuilloux/wiremock-bundle/issues",window="_blank"]
+image:https://img.shields.io/badge/license-MIT-blue.svg[link="LICENSE",window="_blank"] +
+image:https://img.shields.io/badge/PHP-8.0%2B-yellow[]
+image:https://img.shields.io/badge/PHP-8.1%2B-yellow[]
+image:https://img.shields.io/badge/PHP-8.2%2B-yellow[]
+image:https://img.shields.io/badge/PHP-8.3%2B-yellow[] +
+image:https://img.shields.io/badge/Symfony-5%2B-black[]
+image:https://img.shields.io/badge/Symfony-6%2B-black[]
+image:https://img.shields.io/badge/Symfony-7%2B-black[]
+
+
+A Symfony bundle to quickly mock Http Clients using Wiremock. The way it works is by decorating the Symfony HttpClient.
+It checks if Wiremock has a stub for the request and if it does, it returns the stubbed response. If not, it forwards
+the request to the original http client as usual.
+
+[discrete]
+== Table of content
+
+toc::[]
+
+
+== Installation
+
+Execute the composer command to install the bundle:
+
+[source,bash]
+----
+composer require nicolasguilloux/wiremock-bundle --dev
+----
+
+== Documentation
+
+=== Configuration
+
+Here is an example of a configuration with the Wiremock http client:
+
+[source,yaml]
+----
+framework:
+    http_client:
+        scoped_clients:
+            wiremock.client:
+                base_uri: 'http://localhost:8080'
+
+wiremock:
+    # Set the Wiremock http client (default: wiremock.client)
+    # http_client: 'wiremock.client'
+
+    # Removes the Wiremock http client from the HttpClient profiler page (default: false)
+    # remove_from_http_client_profiler: true
+
+    # Decorates by default all clients except the following ones (default: [])
+    # blacklist_clients: []
+
+    # Decorates only the following http client (default: [])
+    # whitelist_clients: []
+----
+
+=== Profiler
+
+A new tab is available in the Symfony profiler to see the Wiremock http calls. This might be helpful to see if a request
+has been used to stub a response or not.
+
+
+== Versioning
+
+wiremock-bundle follows link:https://semver.org/[semantic versioning^]. In short the scheme is MAJOR.MINOR.PATCH where
+1. MAJOR is bumped when there is a breaking change,
+2. MINOR is bumped when a new feature is added in a backward-compatible way,
+3. PATCH is bumped when a bug is fixed in a backward-compatible way.
+
+Versions bellow 1.0.0 are considered experimental and breaking changes may occur at any time.
+
+
+== Contributing
+
+Contributions are welcomed! There are many ways to contribute, and we appreciate all of them. Here are some of the major ones:
+
+* link:https://github.com/NicolasGuilloux/wiremock-bundle/issues[Bug Reports^]: While we strive for quality software, bugs can happen, and we can't fix issues we're not aware of. So please report even if you're not sure about it or just want to ask a question. If anything the issue might indicate that the documentation can still be improved!
+* link:https://github.com/NicolasGuilloux/wiremock-bundle/issues[Feature Request^]: You have a use case not covered by the current api? Want to suggest a change or add something? We'd be glad to read about it and start a discussion to try to find the best possible solution.
+* link:https://github.com/NicolasGuilloux/wiremock-bundle/pulls[Pull Request^]: Want to contribute code or documentation? We'd love that! If you need help to get started, GitHub as link:https://help.github.com/articles/about-pull-requests/[documentation^] on pull requests. We use the link:https://help.github.com/articles/about-collaborative-development-models/["fork and pull model"^] were contributors push changes to their personal fork and then create pull requests to the main repository. Please make your pull requests against the `master` branch.
+
+As a reminder, all contributors are expected to follow our link:./CODE_OF_CONDUCT.md[Code of Conduct].
+
+
+== License
+
+wiremock-bundle is distributed under the terms of the MIT license.
+
+See link:./LICENSE[LICENSE] for details.
+
+
+== Hacking
+
+link:https://nixos.org/manual/nix/stable/introduction[Nix^] is here to help you install the software dependencies.
+
+With a working Nix setup, enter a shell with the required dependencies by running: `nix-shell`

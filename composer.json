@@ -1,0 +1,57 @@
+{
+    "name": "nicolasguilloux/wiremock-bundle",
+    "description": "A Symfony bundle to facilitate hexagonal architecture integration without sacrificing isolation",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "NicolasGuilloux",
+            "homepage": "https://nicolasguilloux.eu"
+        }
+    ],
+    "support": {
+        "email": "nicolas.guilloux@protonmail.com",
+        "source": "https://github.com/nicolasguilloux/wiremock-bundle",
+        "docs": "https://github.com/nicolasguilloux/wiremock-bundle/blob/master/README.md",
+        "issues": "https://github.com/nicolasguilloux/wiremock-bundle/issues"
+    },
+    "require": {
+        "php": "^8.0",
+        "symfony/config": "^5.0 || ^6.0 || ^7.0",
+        "symfony/dependency-injection": "^5.0 || ^6.0 || ^7.0",
+        "symfony/http-client": "^5.0 || ^6.0 || ^7.0",
+        "symfony/http-kernel": "^5.0 || ^6.0 || ^7.0"
+    },
+    "require-dev": {
+        "nicolasguilloux/phpunit-dependency-injection-bundle": "^1.1",
+        "nunomaduro/phpinsights": "^2.11",
+        "phpunit/phpunit": "^9.5",
+        "roave/security-advisories": "dev-latest",
+        "symfony/console": "^5.0 || ^6.0 || ^7.0",
+        "symfony/debug-bundle": "^5.0 || ^6.0 || ^7.0",
+        "symfony/framework-bundle": "^5.0 || ^6.0 || ^7.0",
+        "symfony/monolog-bundle": "^3.7",
+        "symfony/profiler-pack": "^1.0",
+        "symfony/routing": "^5.0 || ^6.0 || ^7.0",
+        "symfony/test-pack": "^1.0",
+        "symfony/yaml": "^5.0 || ^6.0 || ^7.0",
+        "twig/twig": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "NicolasGuilloux\\WiremockBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "NicolasGuilloux\\WiremockBundle\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "discard-changes": true,
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": false
+        }
+    }
+}

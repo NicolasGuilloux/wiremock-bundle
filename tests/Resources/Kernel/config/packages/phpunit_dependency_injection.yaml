@@ -1,0 +1,2 @@
+phpunit_dependency_injection:
+    tests_namespace: 'NicolasGuilloux\WiremockBundle\Tests'

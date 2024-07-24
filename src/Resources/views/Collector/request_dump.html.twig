@@ -1,0 +1,34 @@
+<table>
+    <thead>
+    <tr>
+        <th>
+            <span class="label">{{ method }}</span>
+        </th>
+        <th class="full-width">
+            {{ url }}
+            {% if options is not empty %}
+                {{ profiler_dump(options, maxDepth=1) }}
+            {% endif %}
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th>
+            {% if response.http_code >= 500 %}
+                {% set responseStatus = 'error' %}
+            {% elseif response.http_code >= 400 %}
+                {% set responseStatus = 'warning' %}
+            {% else %}
+                {% set responseStatus = 'success' %}
+            {% endif %}
+            <span class="label status-{{ responseStatus }}">
+                {{ response.http_code }}
+            </span>
+        </th>
+        <td>
+            {{ profiler_dump(response.metadata, maxDepth=1) }}
+        </td>
+    </tr>
+    </tbody>
+</table>

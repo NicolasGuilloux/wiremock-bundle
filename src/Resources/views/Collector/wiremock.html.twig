@@ -1,0 +1,67 @@
+{% extends '@WebProfiler/Profiler/layout.html.twig' %}
+
+{% block menu %}
+    <span class="label {{ collector.mockedCount == 0 ? 'disabled' }}">
+    <span class="icon">{{ include('@WebProfiler/Icon/http-client.svg') }}</span>
+    <strong>Wiremock</strong>
+    {% if collector.mockedCount %}
+        <span class="count">
+            {{ collector.mockedCount }}
+        </span>
+    {% endif %}
+</span>
+{% endblock %}
+
+{% block panel %}
+    <h2>Wiremock</h2>
+    {% if collector.mockedCount == 0 and collector.passedThroughCount == 0 %}
+        <div class="empty">
+            <p>No HTTP requests were handled by Wiremock.</p>
+        </div>
+    {% else %}
+        <div class="metrics">
+            <div class="metric">
+                <span class="value">{{ collector.mockedCount }}</span>
+                <span class="label">Mocked</span>
+            </div>
+            <div class="metric">
+                <span class="value">{{ collector.passedThroughCount }}</span>
+                <span class="label">Passed through</span>
+            </div>
+        </div>
+        <h2>Clients</h2>
+        <div class="sf-tabs">
+        {% for name, requests in collector.clients %}
+            {% set mockedRequests = collector.getMockedResponsesForClient(name) %}
+            {% set passedThroughRequests = collector.getPassedThroughResponsesForClient(name) %}
+
+            <div class="tab {{ mockedRequests|length == 0 ? 'disabled' }}">
+                <h3 class="tab-title">{{ name }} <span class="badge">{{ mockedRequests|length }}</span></h3>
+                <div class="tab-content">
+                    <h4>Mocked requests</h4>
+                    {% if mockedRequests|length == 0 %}
+                        <div class="empty empty-panel">
+                            <p>No HTTP requests were mocked.</p>
+                        </div>
+                    {% else %}
+                        {% for request in mockedRequests %}
+                            {% include '@Wiremock/Collector/request_dump.html.twig' with request only %}
+                        {% endfor %}
+                    {% endif %}
+
+                    <h4>Passed through requests</h4>
+                    {% if passedThroughRequests|length == 0 %}
+                        <div class="empty empty-panel">
+                            <p>No HTTP requests were passed through.</p>
+                        </div>
+                    {% else %}
+                        {% for request in passedThroughRequests %}
+                            {% include '@Wiremock/Collector/request_dump.html.twig' with request only %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+    </div>
+{% endblock %}

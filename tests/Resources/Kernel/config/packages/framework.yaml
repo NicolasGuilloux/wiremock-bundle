@@ -1,0 +1,7 @@
+framework:
+    test: true
+    default_locale: 'fr'
+    secret: 'ThisIsASecret'
+
+    router:
+        resource: '%kernel.project_dir%/tests/Resources/Kernel/config/routes.yaml'

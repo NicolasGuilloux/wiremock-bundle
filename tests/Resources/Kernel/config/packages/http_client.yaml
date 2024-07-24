@@ -1,0 +1,6 @@
+framework:
+  http_client:
+    scoped_clients:
+      test.http_client:
+        base_uri: 'https://google.com'
+        timeout: 10

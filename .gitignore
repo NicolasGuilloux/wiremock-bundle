@@ -1,0 +1,47 @@
+# OS
+.envrc
+
+# Symfony
+/var
+
+# Managed by Composer
+/bin
+/vendor
+
+# PHPUnit
+/.phpunit.result.cache
+/phpunit.xml
+/phpunit-*.xml
+/phpunit-filter.php
+/.phpunit
+/report
+
+# Auto-saved files
+*~
+
+# Mac
+.DS_store
+
+# PhpStorm
+.idea
+
+# Coverage
+/coverage
+/reports
+
+# Database
+*.db
+
+# Static utilities
+.php_cs.cache
+.php-cs-fixer.cache
+
+# Devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml

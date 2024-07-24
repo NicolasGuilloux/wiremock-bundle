@@ -1,0 +1,8 @@
+framework:
+    http_client:
+        scoped_clients:
+            wiremock.http_client:
+                base_uri: 'http://localhost:8080'
+
+wiremock:
+    http_client: 'wiremock.http_client'
